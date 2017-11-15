@@ -3,13 +3,12 @@
 def prompt_user_name():
     return int(input('A number between 1 and 99: '))
 
-def tens():
+def get_tens_number():
     tens = num // 10
     return tens
 
 def get_ones_number(num):
     ones = num % 10
-
     return ones
 
 def tens_word():
@@ -29,7 +28,8 @@ def tens_word():
         tens_word = 'thirty'
     elif tens == 2:
         tens_word = 'twenty'
-        return tens_word
+    return tens_word
+
 def one_word():
     if ones == 9:
         ones_word = 'nine'
@@ -49,21 +49,17 @@ def one_word():
         ones_word = 'two'
     elif ones == 1:
         ones_word = 'one'
-        return ones word
-def ten():
-    if ten == 0:
-        output = ones_word
-    elif ten2 == 1:
-    if one == 1:
+    return ones_word
+
+def irregukar_numbers():
+    if ones == 1:
         output = 'eleven'
-elif one2 == 2:
+    elif one2 == 2:
         output = 'twelve'
-def one3():
-elif one3 == 3:
+    elif one3 == 3:
         output = 'thirteen'
     else:
         output = ones_word + 'teen'
-def regularnumsmsg(tens, ones, tens_word, ones_word):
 else:
     output = tens_word + '-' + ones_word
 
