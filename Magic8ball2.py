@@ -1,10 +1,12 @@
-print('what is your name')
-name = input()
-print('its good to meet you' + name)
-
 import random
-def randomanswer():
-    r = random.randint(1,8)
+
+r = random.randint(1,8)
+
+def prompt_user_for_name():
+    return input('what is your name')
+
+def randomanswer(r):
+
     if r == 1:
         return 'your day will be filled with doom'
     elif r == 2:
@@ -22,5 +24,10 @@ def randomanswer():
     elif r == 8:
         return 'your day is considered to be the best day ever and everything will go your way'
 
-fortune = randomanswer()
-print(fortune)
+def main():
+    name = prompt_user_for_name()
+    print('it nice to meet you ' + name)
+    fortune = randomanswer(r)
+    print(fortune)
+
+main()

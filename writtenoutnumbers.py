@@ -1,9 +1,9 @@
 """Convert a number in base-10 into a written out number in English."""
 
-def prompt_user_name():
+def prompt_user_for_number():
     return int(input('A number between 1 and 99: '))
 
-def get_tens_number():
+def get_tens_number(num):
     tens = num // 10
     return tens
 
@@ -11,7 +11,7 @@ def get_ones_number(num):
     ones = num % 10
     return ones
 
-def tens_word():
+def get_tens_word(tens):
     if tens == 9:
         tens_word = 'ninety'
     elif tens == 8:
@@ -30,7 +30,7 @@ def tens_word():
         tens_word = 'twenty'
     return tens_word
 
-def one_word():
+def get_ones_word(ones):
     if ones == 9:
         ones_word = 'nine'
     elif ones == 8:
@@ -51,16 +51,28 @@ def one_word():
         ones_word = 'one'
     return ones_word
 
-def irregukar_numbers():
+def get_irregular_numbers(ones, ones_word, tens_word):
     if ones == 1:
-        output = 'eleven'
-    elif one2 == 2:
-        output = 'twelve'
-    elif one3 == 3:
-        output = 'thirteen'
+        return 'eleven'
+    elif ones == 2:
+        return  'twelve'
+    elif ones == 3:
+        return  'thirteen'
     else:
-        output = ones_word + 'teen'
-else:
-    output = tens_word + '-' + ones_word
+        return  ones_word + 'teen'
 
-print(output)
+
+def regular_numbers_message(tens, ones, tens_word, ones_word):
+    return tens_word + '-' + ones_word
+
+def main():
+    num = prompt_user_for_number()
+    tens = get_tens_number(num)
+    ones = get_ones_number(num)
+    tens_word = get_tens_word(tens)
+    ones_word = get_ones_word(ones)
+    irregular_numbers = get_irregular_numbers(ones, ones_word, tens_)
+    message = regular_numbers_message(tens, ones, tens_word, ones_word)
+    print(message)
+
+main()
